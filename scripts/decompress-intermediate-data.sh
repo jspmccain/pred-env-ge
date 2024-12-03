@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the folder containing the compressed files
-input_folder="../data/tester_int/" # Adjust this path if needed
+input_folder="../data/intermediate_data/" # Adjust this path if needed
 
 # Loop through all the .7z.001 files in the folder
 for header_file in "$input_folder"/*.7z.001; do

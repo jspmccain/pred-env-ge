@@ -61,7 +61,7 @@ leave_condition_out_r_0215_rsq_pathway <- subsys_only_r_squared_ridge_group_cv[s
 
 ### make function for making the number pretty
 make_rsq_pretty <- function(number_input){
-  rounded_number <- round(number_input, 3)
+  rounded_number <- round(number_input, 2)
   return(paste("R^2 == ", rounded_number))
 }
 make_rmsd_pretty <- function(number_input){
