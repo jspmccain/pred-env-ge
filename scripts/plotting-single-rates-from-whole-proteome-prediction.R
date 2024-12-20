@@ -95,8 +95,8 @@ aspartate_kinase_predictions_two <- summarized_df_for_ridge_whole_proteome %>%
   # scale_x_continuous(label=scientific_10, limits = c(0, 3e-5*1e6)) +
   scale_y_continuous(limits = c(0, 3e-5*1e6)) +
   scale_x_continuous(limits = c(0, 3e-5*1e6)) +
-  labs(x = 'Observed Rate of Aspartate Kinase Activity<br>(nmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
-       y = 'Predicted Rate of Aspartate Kinase Activity<br>(nmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)') +
+  labs(x = 'Observed Rate of Aspartate Kinase Activity<br>(\u03bcmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
+       y = 'Predicted Rate of Aspartate Kinase Activity<br>(\u03bcmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)') +
   theme(
     axis.title = ggtext::element_markdown(size = 13),
     plot.title = element_text(size = 13)) +
@@ -147,7 +147,7 @@ aspartate_kinase_single_protein_rate <- single_aspartate_kinase_df %>%
   # ylab(expression(paste('Observed Rate of Aspartate Kinase Activity (nmol ', hour^-1, mL^-1, ')'))) +
   # ylab(expression(paste('Predicted Rate of GSH Synthesis (nmol ', hour^-1, mL^-1, ')'))) +
   theme_bw() +
-  labs(y = 'Observed Rate of Aspartate Kinase Activity<br>(nmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
+  labs(y = 'Observed Rate of Aspartate Kinase Activity<br>(\u03bcmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
        x = 'Aspartate Kinase Relative Abundance (log<sub>\0032</sub>-transformed)') +
   theme(
     axis.title = ggtext::element_markdown(size = 13),
@@ -171,16 +171,16 @@ arranged_main_fig_asparate_predictions <- ggarrange(aspartate_kinase_single_prot
           nrow = 1, align = 'hv')
 
 ggsave(arranged_main_fig_asparate_predictions, 
-       filename = 'figures/arranged_main_fig_asparate_predictions.pdf', 
+       filename = 'figures/arranged_main_fig_asparate_predictions.svg', 
        height = 6*0.7, width = 13.7*0.7)
 
 ## separately save them
 ggsave(aspartate_kinase_single_protein_rate + ggtitle('A. Single protein-to-reaction rate relationship'),
-       filename = 'figures/aspartate_kinase_single_protein_rate.pdf',
+       filename = 'figures/aspartate_kinase_single_protein_rate.svg',
        height = 6, width = 13.7/2)
 
 ggsave(aspartate_kinase_predictions_two + ggtitle('B. Proteome prediction'),
-       filename = 'figures/aspartate_kinase_predictions_two.pdf',
+       filename = 'figures/aspartate_kinase_predictions_two.svg',
        height = 6, width = 13.7/2)
 
 

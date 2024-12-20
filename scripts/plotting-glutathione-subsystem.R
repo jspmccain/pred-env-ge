@@ -92,8 +92,8 @@ glutathione_metabolism_prediction <- gamma_glut_predictions %>%
         strip.text.x = element_text(size = 13),
         axis.title = element_text(size = 13),
         axis.text = element_text(size = 13)) +
-  labs(x = 'Observed Rate of GSH Synthesis<br>(nmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
-       y = 'Predicted Rate of GSH Synthesis<br>(nmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)') +
+  labs(x = 'Observed Rate of GSH Synthesis<br>(\u03bcmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)',
+       y = 'Predicted Rate of GSH Synthesis<br>(\u03bcmol hour<sup>\u22121</sup> mL<sup>\u22121</sup>)') +
   theme(
     axis.title = ggtext::element_markdown()
   ) +
@@ -124,7 +124,7 @@ coefficient_gamma_glut <- gamma_glut_coefs %>%
   ylab('Protein') +
   ggtitle('D. Ridge regression coefficients') +
   scale_x_continuous(label=scientific_10) +
-  labs(x = expression(paste('Coefficient Value (nmol', ' ', hour^-1, mL^-1, ')'))) +
+  labs(x = expression(paste('Coefficient Value (\u03bcmol', ' ', hour^-1, mL^-1, ')'))) +
   geom_errorbarh(aes(xmin = mean_coef_value*1e6 - sd_coef_value*1e6, 
                      xmax = mean_coef_value*1e6 + sd_coef_value*1e6,
                      colour = standard_name), height = 0.7, lwd = 1.1) +
